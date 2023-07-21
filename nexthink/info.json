@@ -1,0 +1,87 @@
+{
+  "name": "nexthink",
+  "label": "Nexthink",
+  "description": "Nexthink is an automation and remediation platform which delivers visibility across all environments so IT teams can continuously improve the digital workplace to optimize productivity and cost.",
+  "publisher": "Fortinet",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "version": "1.0.0",
+  "category": "Endpoint Security",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "name": "server_url",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "description": "URL of the Nexthink server to which you will connect and perform the automated operations."
+      },
+      {
+        "title": "Username",
+        "name": "username",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "description": "Username used to access the Nexthink server to which you will connect and perform the automated operations."
+      },
+      {
+        "title": "Password",
+        "name": "password",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "description": "Password used to access the Nexthink server to which you will connect and perform the automated operations."
+      },
+      {
+        "title": "Verify SSL",
+        "description": "Specifies whether the SSL certificate for the Nexthink server is to be verified or not. By default, this option is set as True.",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "nexthink_query_language",
+      "annotation": "nexthink_query_language",
+      "category": "investigation",
+      "title": "Nexthink Query Language",
+      "description": "The service answers NXQL queries to the in-memory Engine database with a list of records.",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Query",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "type": "text",
+          "name": "query",
+          "tooltip": "Specify the NXQL query to execute.",
+          "description": "Specify the NXQL query to execute."
+        },
+        {
+          "title": "Platform",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "type": "text",
+          "name": "platform",
+          "tooltip": "Specify the target platform of the query. There can be multiple platforms. Supported platforms are windows, mac_os and mobile.",
+          "description": "Specify the target platform of the query. There can be multiple platforms. Supported platforms are windows, mac_os and mobile."
+        }
+      ],
+      "output_schema": {}
+    }
+  ]
+}

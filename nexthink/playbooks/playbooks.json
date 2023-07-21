@@ -1,0 +1,99 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "00f9239d-a888-48c7-aaf0-4ca6909ed33b",
+      "@type": "WorkflowCollection",
+      "name": "Sample - Nexthink - 1.0.0",
+      "description": "Nexthink is an automation and remediation platform which delivers visibility across all environments so IT teams can continuously improve the digital workplace to optimize productivity and cost.",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "Nexthink",
+        "nexthink"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "63dc3aa8-05f7-4fac-bb00-830b5afe3c48",
+          "collection": "/api/3/workflow_collections/00f9239d-a888-48c7-aaf0-4ca6909ed33b",
+          "triggerLimit": null,
+          "description": "The service answers NXQL queries to the in-memory Engine database with a list of records.",
+          "name": "Nexthink Query Language",
+          "tag": "#Nexthink",
+          "recordTags": [
+            "Nexthink",
+            "nexthink"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/cfc4f2ce-b677-444d-8663-d643fc36e759",
+          "steps": [
+            {
+              "uuid": "cfc4f2ce-b677-444d-8663-d643fc36e759",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "92a21adf-4806-4019-b407-e3a1f8339301",
+                "title": "Nexthink: Nexthink Query Language",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "e4e3a718-e26d-4e44-8b9b-350bfd2e89f8",
+              "@type": "WorkflowStep",
+              "name": "Nexthink Query Language",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Nexthink",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "nexthink",
+                "operation": "nexthink_query_language",
+                "operationTitle": "Nexthink Query Language",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "d6d61892-2d3b-46d8-9b2e-32d8239727cc",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Nexthink Query Language",
+              "sourceStep": "/api/3/workflow_steps/cfc4f2ce-b677-444d-8663-d643fc36e759",
+              "targetStep": "/api/3/workflow_steps/e4e3a718-e26d-4e44-8b9b-350bfd2e89f8"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
