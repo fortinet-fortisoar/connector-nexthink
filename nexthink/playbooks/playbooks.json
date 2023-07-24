@@ -9,8 +9,7 @@
       "visible": true,
       "image": null,
       "recordTags": [
-        "Nexthink",
-        "nexthink"
+        "Nexthink"
       ],
       "workflows": [
         {
@@ -22,8 +21,7 @@
           "name": "Nexthink Query Language",
           "tag": "#Nexthink",
           "recordTags": [
-            "Nexthink",
-            "nexthink"
+            "Nexthink"
           ],
           "isActive": false,
           "debug": false,
