@@ -2,43 +2,45 @@
   "type": "workflow_collections",
   "data": [
     {
-      "uuid": "00f9239d-a888-48c7-aaf0-4ca6909ed33b",
+      "uuid": "5de660a3-a47d-4297-b114-21ec01f49848",
       "@type": "WorkflowCollection",
       "name": "Sample - Nexthink - 1.0.0",
       "description": "Nexthink is an automation and remediation platform which delivers visibility across all environments so IT teams can continuously improve the digital workplace to optimize productivity and cost.",
       "visible": true,
       "image": null,
       "recordTags": [
-        "Nexthink"
+        "Nexthink",
+        "nexthink"
       ],
       "workflows": [
         {
           "@type": "Workflow",
-          "uuid": "63dc3aa8-05f7-4fac-bb00-830b5afe3c48",
-          "collection": "/api/3/workflow_collections/00f9239d-a888-48c7-aaf0-4ca6909ed33b",
+          "uuid": "a2d955e4-3448-4a0c-820a-04d8711d8871",
+          "collection": "/api/3/workflow_collections/5de660a3-a47d-4297-b114-21ec01f49848",
           "triggerLimit": null,
-          "description": "The service answers NXQL queries to the in-memory Engine database with a list of records.",
-          "name": "Nexthink Query Language",
+          "description": "The service answers Nexthink Query Language queries to the in-memory Engine database with a list of records.",
+          "name": "Run Query",
           "tag": "#Nexthink",
           "recordTags": [
-            "Nexthink"
+            "Nexthink",
+            "nexthink"
           ],
           "isActive": false,
           "debug": false,
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/cfc4f2ce-b677-444d-8663-d643fc36e759",
+          "triggerStep": "/api/3/workflow_steps/6a063f30-2926-4811-b990-3010fc50d969",
           "steps": [
             {
-              "uuid": "cfc4f2ce-b677-444d-8663-d643fc36e759",
+              "uuid": "6a063f30-2926-4811-b990-3010fc50d969",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "92a21adf-4806-4019-b407-e3a1f8339301",
-                "title": "Nexthink: Nexthink Query Language",
+                "route": "ed88c884-318c-4d87-8032-ff9f7574b677",
+                "title": "Nexthink: Run Query",
                 "resources": [
                   "alerts"
                 ],
@@ -57,9 +59,9 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "e4e3a718-e26d-4e44-8b9b-350bfd2e89f8",
+              "uuid": "87a7e100-e1ac-4564-80f5-26d3c4fddd86",
               "@type": "WorkflowStep",
-              "name": "Nexthink Query Language",
+              "name": "Run Query",
               "description": null,
               "status": null,
               "arguments": {
@@ -69,7 +71,7 @@
                 "version": "1.0.0",
                 "connector": "nexthink",
                 "operation": "nexthink_query_language",
-                "operationTitle": "Nexthink Query Language",
+                "operationTitle": "Run Query",
                 "step_variables": {
                   "output_data": "{{vars.result}}"
                 }
@@ -82,12 +84,12 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "d6d61892-2d3b-46d8-9b2e-32d8239727cc",
+              "uuid": "bd1ca622-15cb-4bef-ae21-d9fa0aa784e2",
               "label": null,
               "isExecuted": false,
-              "name": "Start-> Nexthink Query Language",
-              "sourceStep": "/api/3/workflow_steps/cfc4f2ce-b677-444d-8663-d643fc36e759",
-              "targetStep": "/api/3/workflow_steps/e4e3a718-e26d-4e44-8b9b-350bfd2e89f8"
+              "name": "Start-> Run Query",
+              "sourceStep": "/api/3/workflow_steps/6a063f30-2926-4811-b990-3010fc50d969",
+              "targetStep": "/api/3/workflow_steps/87a7e100-e1ac-4564-80f5-26d3c4fddd86"
             }
           ]
         }

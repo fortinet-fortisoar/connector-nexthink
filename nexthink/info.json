@@ -56,8 +56,8 @@
       "operation": "nexthink_query_language",
       "annotation": "nexthink_query_language",
       "category": "investigation",
-      "title": "Nexthink Query Language",
-      "description": "The service answers NXQL queries to the in-memory Engine database with a list of records.",
+      "title": "Run Query",
+      "description": "The service answers Nexthink Query Language queries to the in-memory Engine database with a list of records.",
       "enabled": true,
       "parameters": [
         {
@@ -68,7 +68,8 @@
           "type": "text",
           "name": "query",
           "tooltip": "Specify the NXQL query to execute.",
-          "description": "Specify the NXQL query to execute."
+          "description": "Specify the NXQL query to execute.",
+          "placeholder": "(select (name) (from device))"
         },
         {
           "title": "Platform",

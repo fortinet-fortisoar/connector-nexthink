@@ -65,7 +65,7 @@ def nexthink_query_language(config, params):
 def check_health_ex(config):
     try:
         params = {
-            "query": "(select (device_uid name) (from device))",
+            "query": "(select (name) (from device) (limit 1))",
             "platform": "windows",
         }
         nexthink_query_language(config, params)
