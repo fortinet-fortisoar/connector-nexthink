@@ -1,0 +1,99 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "5de660a3-a47d-4297-b114-21ec01f49848",
+      "@type": "WorkflowCollection",
+      "name": "Sample - Nexthink - 1.0.0",
+      "description": "Nexthink is an automation and remediation platform which delivers visibility across all environments so IT teams can continuously improve the digital workplace to optimize productivity and cost.",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "Nexthink",
+        "nexthink"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "a2d955e4-3448-4a0c-820a-04d8711d8871",
+          "collection": "/api/3/workflow_collections/5de660a3-a47d-4297-b114-21ec01f49848",
+          "triggerLimit": null,
+          "description": "The service answers Nexthink Query Language queries to the in-memory Engine database with a list of records.",
+          "name": "Run Query",
+          "tag": "#Nexthink",
+          "recordTags": [
+            "Nexthink",
+            "nexthink"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/6a063f30-2926-4811-b990-3010fc50d969",
+          "steps": [
+            {
+              "uuid": "6a063f30-2926-4811-b990-3010fc50d969",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "ed88c884-318c-4d87-8032-ff9f7574b677",
+                "title": "Nexthink: Run Query",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "87a7e100-e1ac-4564-80f5-26d3c4fddd86",
+              "@type": "WorkflowStep",
+              "name": "Run Query",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Nexthink",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "nexthink",
+                "operation": "nexthink_query_language",
+                "operationTitle": "Run Query",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "bd1ca622-15cb-4bef-ae21-d9fa0aa784e2",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Run Query",
+              "sourceStep": "/api/3/workflow_steps/6a063f30-2926-4811-b990-3010fc50d969",
+              "targetStep": "/api/3/workflow_steps/87a7e100-e1ac-4564-80f5-26d3c4fddd86"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
