@@ -57,7 +57,7 @@
       "annotation": "nexthink_query_language",
       "category": "investigation",
       "title": "Run Query",
-      "description": "The service answers Nexthink Query Language queries to the in-memory Engine database with a list of records.",
+      "description": "Runs a search query using Nexthink Query Language grammar to fetch the records from the in-memory Engine database.",
       "enabled": true,
       "parameters": [
         {
